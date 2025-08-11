@@ -1,12 +1,8 @@
 ---
 abbrlink: ''
-categories: []
 category: 日常
-date: ''
 published: 2025-8-11
-tags: []
 title: 近况
-updated: ''
 ---
 上次更新博客已经是二月了呀，~又拖更了半年~
 
