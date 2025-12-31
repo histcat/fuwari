@@ -3,7 +3,7 @@ abbrlink: ''
 category: 日常
 description: ''
 draft: false
-published: '2025-12-31'
+published: 2025-12-31
 tags:
 - 日常
 - 总结
