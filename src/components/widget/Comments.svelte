@@ -1,43 +1,97 @@
-<section>
-    <script src="https://giscus.app/client.js"
-        data-repo="histcat/giscus"
-        data-repo-id="R_kgDOPbhZrQ"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOPbhZrc4CuAbE"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme={$mode === DARK_MODE ? 'dark' : 'light'}
-        data-lang="zh-CN"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-    </script>
-</section>
+<div id="tcomment"></div>
 
 <script>
-import { AUTO_MODE, DARK_MODE } from '@constants/constants.ts'
 import { onMount } from 'svelte'
-import { writable } from 'svelte/store';
-import { getStoredTheme } from '@utils/setting-utils.ts'
-const mode = writable(AUTO_MODE)
+
+const TWIKOO_ENV_ID = 'https://histcattwikoo.netlify.app'
+
+const DARK_STYLES = `
+  /* twikoo dark mode — injected by Comments.svelte */
+  html.dark .tk-comments,
+  html.dark .tk-comments-container,
+  html.dark .tk-comment,
+  html.dark .tk-content,
+  html.dark .tk-input,
+  html.dark .tk-preview,
+  html.dark .tk-comments-title,
+  html.dark .tk-comments-count,
+  html.dark .tk-nick,
+  html.dark .tk-nick-link,
+  html.dark .tk-meta,
+  html.dark .tk-submit,
+  html.dark .tk-action-link,
+  html.dark .tk-avatar,
+  html.dark .tk-row,
+  html.dark .tk-replies,
+  html.dark .tk-expand,
+  html.dark .tk-owo,
+  html.dark .tk-extras,
+  html.dark .tk-label,
+  html.dark .el-input__inner,
+  html.dark .el-input__wrapper,
+  html.dark .el-textarea__inner,
+  html.dark .OwO .OwO-logo,
+  html.dark .vemo,
+  html.dark .vcontent,
+  html.dark .vreply {
+    color: #d1d5db !important;
+  }
+  html.dark .tk-time,
+  html.dark .tk-row-actions,
+  html.dark .tk-action,
+  html.dark .tk-action-count,
+  html.dark .tk-admin,
+  html.dark .tk-badge {
+    color: #9ca3af !important;
+  }
+  html.dark .el-input__inner,
+  html.dark .el-textarea__inner {
+    background-color: #1f2937 !important;
+    border-color: #4b5563 !important;
+  }
+  html.dark .el-textarea__inner:focus,
+  html.dark .el-input__inner:focus {
+    border-color: #6366f1 !important;
+  }
+  html.dark .tk-comment {
+    border-bottom-color: #374151 !important;
+  }
+`
+
+let styleEl = null
+
+function updateDarkStyles() {
+  const isDark = document.documentElement.classList.contains('dark')
+  if (isDark && !styleEl) {
+    styleEl = document.createElement('style')
+    styleEl.id = 'twikoo-dark-styles'
+    styleEl.textContent = DARK_STYLES
+    document.head.appendChild(styleEl)
+  } else if (!isDark && styleEl) {
+    styleEl.remove()
+    styleEl = null
+  }
+}
+
 onMount(() => {
-  mode.set(getStoredTheme())
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/twikoo@1.7.15/dist/twikoo.all.min.js'
+  script.onload = () => {
+    window.twikoo?.init({
+      envId: TWIKOO_ENV_ID,
+      el: '#tcomment',
+    })
+  }
+  document.body.appendChild(script)
+
+  // apply dark styles on mount
+  updateDarkStyles()
+
+  // observe theme changes
+  const observer = new MutationObserver(() => updateDarkStyles())
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['class'],
+  })
 })
-
-function updateGiscusTheme() {
-  const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light'
-  const iframe = document.querySelector('iframe.giscus-frame')
-  if (!iframe) return
-  iframe.contentWindow.postMessage({ giscus: { setConfig: { theme } } }, 'https://giscus.app')
-}
-
-const observer = new MutationObserver(updateGiscusTheme)
-observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
-
-window.onload = () => {
-  updateGiscusTheme()
-}
 </script>
