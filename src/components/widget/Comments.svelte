@@ -3,7 +3,7 @@
 <script>
 import { onMount } from 'svelte'
 
-const TWIKOO_ENV_ID = 'https://histcattwikoo.netlify.app'
+const TWIKOO_ENV_ID = 'https://histcattwikoo.netlify.app/.netlify/functions/twikoo'
 
 const DARK_STYLES = `
   /* twikoo dark mode — injected by Comments.svelte */
@@ -75,7 +75,7 @@ function updateDarkStyles() {
 
 onMount(() => {
   const script = document.createElement('script')
-  script.src = 'https://cdn.jsdelivr.net/npm/twikoo@1.7.15/dist/twikoo.all.min.js'
+  script.src = 'https://registry.npmmirror.com/twikoo/1.7.15/files/dist/twikoo.min.js'
   script.onload = () => {
     window.twikoo?.init({
       envId: TWIKOO_ENV_ID,
