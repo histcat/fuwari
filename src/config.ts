@@ -48,9 +48,9 @@ export const navBarConfig: NavBarConfig = {
 		// 	external: true, // Show an external link icon and will open in a new tab
 		// },
 		{
-		    name: "开往",
-		    url: "https://www.travellings.cn/go.html",
-		    external: true,
+			name: "开往",
+			url: "https://www.travellings.cn/go.html",
+			external: true,
 		},
 	],
 };
@@ -58,7 +58,7 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
 	avatar: "/favicon/favicon.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "Histcat",
-	bio: "一个普通的高三生",
+	bio: "一个普通的大学生",
 	links: [
 		// {
 		// 	name: "Twitter",
