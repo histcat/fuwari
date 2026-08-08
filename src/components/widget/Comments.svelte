@@ -3,7 +3,7 @@
 <script>
 import { onMount } from 'svelte'
 
-const TWIKOO_ENV_ID = 'https://histcattwikoo.netlify.app'
+const TWIKOO_ENV_ID = 'https://histcattwikoo.netlify.app/.netlify/functions/twikoo'
 
 const DARK_STYLES = `
   /* twikoo dark mode — injected by Comments.svelte */
