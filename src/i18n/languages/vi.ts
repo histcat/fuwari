@@ -32,6 +32,10 @@ export const vi: Translation = {
 
 	[Key.more]: "Thêm",
 
+	[Key.friends]: "Bạn bè",
+	[Key.friendsDescription]: "Đây là liên kết đến bạn bè và các trang web thú vị.",
+	[Key.noFriends]: "Chưa có liên kết bạn bè",
+
 	[Key.author]: "Tác giả",
 	[Key.publishedAt]: "Đăng vào lúc",
 	[Key.license]: "Giấy phép bản quyền",

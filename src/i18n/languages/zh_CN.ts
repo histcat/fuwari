@@ -32,6 +32,10 @@ export const zh_CN: Translation = {
 
 	[Key.more]: "更多",
 
+	[Key.friends]: "友情链接",
+	[Key.friendsDescription]: "这里是一些朋友或有趣的网站链接。",
+	[Key.noFriends]: "暂无友链",
+
 	[Key.author]: "作者",
 	[Key.publishedAt]: "发布于",
 	[Key.license]: "许可协议",

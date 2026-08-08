@@ -32,6 +32,10 @@ export const ko: Translation = {
 
 	[Key.more]: "더 보기",
 
+	[Key.friends]: "친구 링크",
+	[Key.friendsDescription]: "친구들과 흥미로운 웹사이트 링크입니다.",
+	[Key.noFriends]: "아직 친구 링크가 없습니다",
+
 	[Key.author]: "저자",
 	[Key.publishedAt]: "게시일",
 	[Key.license]: "라이선스",

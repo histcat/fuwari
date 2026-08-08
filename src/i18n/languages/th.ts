@@ -32,6 +32,10 @@ export const th: Translation = {
 
 	[Key.more]: "ดูเพิ่ม",
 
+	[Key.friends]: "ลิงก์เพื่อน",
+	[Key.friendsDescription]: "นี่คือลิงก์ของเพื่อนและเว็บไซต์ที่น่าสนใจ",
+	[Key.noFriends]: "ยังไม่มีลิงก์เพื่อน",
+
 	[Key.author]: "ผู้เขียน",
 	[Key.publishedAt]: "เผยแพร่เมื่อ",
 	[Key.license]: "สัญญาอนุญาต",

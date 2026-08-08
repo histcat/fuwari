@@ -32,6 +32,10 @@ export const ja: Translation = {
 
 	[Key.more]: "もっと",
 
+	[Key.friends]: "友達リンク",
+	[Key.friendsDescription]: "友達やおすすめサイトのリンク集です。",
+	[Key.noFriends]: "まだ友達リンクがありません",
+
 	[Key.author]: "作者",
 	[Key.publishedAt]: "公開日",
 	[Key.license]: "ライセンス",

@@ -1,0 +1,222 @@
+---
+import { Icon } from "astro-icon/components";
+import type { Friend } from "../data/friends";
+
+interface Props {
+  friend: Friend;
+}
+
+const { friend } = Astro.props;
+
+// Extract domain from URL for display
+const domain = new URL(friend.url).hostname;
+---
+
+<a
+  href={friend.url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="friend-card group block"
+>
+  <!-- Title bar -->
+  <div class="friend-titlebar">
+    <div class="friend-titlebar-left">
+      <!-- Avatar -->
+      <div class="friend-avatar">
+        <img
+          src={friend.avatar}
+          alt={`${friend.name}'s avatar`}
+          loading="lazy"
+          class="friend-avatar-img"
+          onerror="this.style.display='none';this.parentElement.classList.add('friend-avatar-placeholder')"
+        />
+      </div>
+      <!-- Name + Domain -->
+      <div class="friend-info">
+        <span class="friend-name text-black/90 dark:text-white/90">{friend.name}</span>
+        <span class="friend-domain text-black/50 dark:text-white/50">{domain}</span>
+      </div>
+    </div>
+    <!-- External link icon -->
+    <div class="friend-external-icon text-black/40 dark:text-white/40">
+      <Icon
+        name="fa6-solid:arrow-up-right-from-square"
+        class="text-[0.875rem]"
+      />
+    </div>
+  </div>
+
+  <!-- Description -->
+  <div class="friend-description text-black/65 dark:text-white/65">
+    {friend.description}
+  </div>
+</a>
+
+<style>
+  .friend-card {
+    display: block;
+    background: var(--license-block-bg);
+    position: relative;
+    margin: 0.5rem 0;
+    padding: 1.1rem 1.5rem;
+    border-radius: var(--radius-large);
+    text-decoration-thickness: 0px;
+    text-decoration-line: none;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.15s;
+  }
+
+  .friend-card:hover {
+    background-color: var(--btn-regular-bg-hover);
+  }
+
+  .friend-card:hover .friend-name {
+    color: var(--btn-content);
+  }
+
+  .friend-card:hover .friend-domain {
+    color: var(--btn-content);
+    opacity: 0.8;
+  }
+
+  .friend-card:hover .friend-description {
+    color: var(--tw-prose-headings, oklch(0.25 0.02 var(--hue)));
+  }
+
+  .friend-card:hover .friend-external-icon {
+    opacity: 1;
+    color: var(--btn-content);
+  }
+
+  .friend-card:active {
+    scale: 0.98;
+    background-color: var(--btn-regular-bg-active);
+  }
+
+  .friend-titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.15s;
+  }
+
+  .friend-titlebar-left {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.75rem;
+    align-items: center;
+    min-width: 0;
+  }
+
+  .friend-avatar {
+    display: block;
+    overflow: hidden;
+    width: 2.25rem;
+    height: 2.25rem;
+    flex-shrink: 0;
+    background-color: var(--primary);
+    background-size: cover;
+    border-radius: 50%;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.15s;
+  }
+
+  .friend-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .friend-avatar-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    color: white;
+  }
+
+  .friend-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 0.125rem;
+  }
+
+  .friend-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.15s;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .friend-domain {
+    font-size: 0.8rem;
+    font-weight: 400;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.15s;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .friend-external-icon {
+    flex-shrink: 0;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.15s;
+  }
+
+  .friend-description {
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.6rem;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.15s;
+
+    /* Line clamp to 2 lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .friend-card {
+      padding: 1rem 1.25rem;
+    }
+
+    .friend-titlebar {
+      font-size: 1.1rem;
+    }
+
+    .friend-avatar {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .friend-name {
+      font-size: 1rem;
+    }
+
+    .friend-description {
+      font-size: 0.875rem;
+      line-height: 1.5rem;
+    }
+  }
+</style>

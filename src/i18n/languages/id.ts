@@ -32,6 +32,10 @@ export const id: Translation = {
 
 	[Key.more]: "Lainnya",
 
+	[Key.friends]: "Teman",
+	[Key.friendsDescription]: "Berikut adalah tautan teman dan situs web menarik.",
+	[Key.noFriends]: "Belum ada tautan teman",
+
 	[Key.author]: "Penulis",
 	[Key.publishedAt]: "Diterbitkan pada",
 	[Key.license]: "Lisensi",

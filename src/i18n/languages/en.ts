@@ -32,6 +32,10 @@ export const en: Translation = {
 
 	[Key.more]: "More",
 
+	[Key.friends]: "Friends",
+	[Key.friendsDescription]: "Here are some friends and interesting websites.",
+	[Key.noFriends]: "No friends yet",
+
 	[Key.author]: "Author",
 	[Key.publishedAt]: "Published at",
 	[Key.license]: "License",
