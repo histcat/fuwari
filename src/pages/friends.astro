@@ -1,10 +1,16 @@
 ---
+import { getEntry, render } from "astro:content";
+import Markdown from "@components/misc/Markdown.astro";
+import Comments from "@components/widget/Comments.svelte";
 import { Icon } from "astro-icon/components";
 import FriendsCard from "../components/FriendsCard.astro";
 import { friends } from "../data/friends";
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
+
+const friendsPost = await getEntry("spec", "friends");
+const { Content } = friendsPost ? await render(friendsPost) : { Content: null };
 ---
 
 <MainGridLayout
@@ -30,6 +36,7 @@ import MainGridLayout from "../layouts/MainGridLayout.astro";
             {friends.map((friend) => <FriendsCard friend={friend} />)}
           </div>
         ) : (
+          <!-- Empty state -->
           <div class="flex flex-col items-center justify-center py-16 text-50">
             <Icon
               name="material-symbols:people-outline-rounded"
@@ -39,6 +46,15 @@ import MainGridLayout from "../layouts/MainGridLayout.astro";
           </div>
         )
       }
+      {Content && (
+        <div class="mb-6">
+          <Markdown class="mt-2">
+            <Content />
+          </Markdown>
+        </div>
+      )}
+      <Comments client:only="svelte"></Comments>
     </div>
   </div>
+
 </MainGridLayout>
