@@ -19,4 +19,10 @@ export const friends: Friend[] = [
 		avatar: "https://ikyozi.cyou/img/icon.jpg",
 		description: "无奈被些名利缚，无奈被他情担阁！可惜风流总闲却！",
 	},
+	{
+		name: "小岚的杂物间",
+		url: "https://www.guirlan.de",
+		avatar: "https://www.guirlan.de/favicon.ico",
+		description: "这里储存着各种稀奇古怪事物~",
+	},
 ];
