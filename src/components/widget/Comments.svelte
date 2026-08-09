@@ -75,7 +75,7 @@ function updateDarkStyles() {
 
 onMount(() => {
   const script = document.createElement('script')
-  script.src = 'https://cdn.jsdelivr.net/npm/twikoo@1.7.15/dist/twikoo.all.min.js'
+  script.src = 'https://js.histcat.top/npm/twikoo@1.7.15/dist/twikoo.all.min.js'
   script.onload = () => {
     window.twikoo?.init({
       envId: TWIKOO_ENV_ID,
