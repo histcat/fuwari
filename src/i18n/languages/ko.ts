@@ -36,6 +36,9 @@ export const ko: Translation = {
 	[Key.friendsDescription]: "친구들과 흥미로운 웹사이트 링크입니다.",
 	[Key.noFriends]: "아직 친구 링크가 없습니다",
 
+	[Key.shuoshuo]: "한마디",
+	[Key.shuoshuoDescription]: "일상의 짧은 생각들. 자유롭게 댓글 남겨 주세요.",
+
 	[Key.author]: "저자",
 	[Key.publishedAt]: "게시일",
 	[Key.license]: "라이선스",

@@ -6,6 +6,8 @@ enum I18nKey {
 	friends = "friends",
 	friendsDescription = "friendsDescription",
 	noFriends = "noFriends",
+	shuoshuo = "shuoshuo",
+	shuoshuoDescription = "shuoshuoDescription",
 
 	tags = "tags",
 	categories = "categories",

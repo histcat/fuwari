@@ -36,6 +36,9 @@ export const id: Translation = {
 	[Key.friendsDescription]: "Berikut adalah tautan teman dan situs web menarik.",
 	[Key.noFriends]: "Belum ada tautan teman",
 
+	[Key.shuoshuo]: "Catatan",
+	[Key.shuoshuoDescription]: "Momen dan pemikiran singkat — silakan tinggalkan komentar!",
+
 	[Key.author]: "Penulis",
 	[Key.publishedAt]: "Diterbitkan pada",
 	[Key.license]: "Lisensi",

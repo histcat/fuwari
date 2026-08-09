@@ -36,6 +36,9 @@ export const ja: Translation = {
 	[Key.friendsDescription]: "友達やおすすめサイトのリンク集です。",
 	[Key.noFriends]: "まだ友達リンクがありません",
 
+	[Key.shuoshuo]: "ひとこと",
+	[Key.shuoshuoDescription]: "日常のつぶやき。お気軽にコメントしてください。",
+
 	[Key.author]: "作者",
 	[Key.publishedAt]: "公開日",
 	[Key.license]: "ライセンス",

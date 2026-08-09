@@ -36,6 +36,9 @@ export const tr: Translation = {
 	[Key.friendsDescription]: "İşte arkadaşlar ve ilginç web sitelerinin bağlantıları.",
 	[Key.noFriends]: "Henüz arkadaş bağlantısı yok",
 
+	[Key.shuoshuo]: "Kısa Notlar",
+	[Key.shuoshuoDescription]: "Gündelik anlar ve düşünceler — yorum bırakmaktan çekinmeyin!",
+
 	[Key.author]: "Yazar",
 	[Key.publishedAt]: "Yayınlanma:",
 	[Key.license]: "Lisans",

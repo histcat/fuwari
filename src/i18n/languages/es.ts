@@ -36,6 +36,9 @@ export const es: Translation = {
 	[Key.friendsDescription]: "Aquí hay enlaces de amigos y sitios web interesantes.",
 	[Key.noFriends]: "Sin amigos aún",
 
+	[Key.shuoshuo]: "Notas",
+	[Key.shuoshuoDescription]: "Momentos y pensamientos casuales: ¡siéntete libre de comentar!",
+
 	[Key.author]: "Autor",
 	[Key.publishedAt]: "Publicado el",
 	[Key.license]: "Licencia",

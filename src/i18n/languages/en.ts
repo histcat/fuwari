@@ -36,6 +36,9 @@ export const en: Translation = {
 	[Key.friendsDescription]: "Here are some friends and interesting websites.",
 	[Key.noFriends]: "No friends yet",
 
+	[Key.shuoshuo]: "Shuoshuo",
+	[Key.shuoshuoDescription]: "Casual moments and thoughts — feel free to leave a comment.",
+
 	[Key.author]: "Author",
 	[Key.publishedAt]: "Published at",
 	[Key.license]: "License",

@@ -37,12 +37,24 @@ export const siteConfig: SiteConfig = {
 	],
 };
 
+export const shuoshuoConfig = {
+	// 说说后端的 Worker 地址，部署后请替换成实际地址（例如 https://shuoshuo-worker.xxx.workers.dev）。
+	// 也可以用环境变量 PUBLIC_SHUOSHUO_API_BASE 覆盖，方便构建时配置。
+	apiBaseUrl:
+		import.meta.env.PUBLIC_SHUOSHUO_API_BASE ??
+		"https://talktalkend.histcat.top",
+};
+
 export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
 		LinkPreset.Archive,
 		LinkPreset.About,
 		LinkPreset.Friends,
+		{
+			name: "说说",
+			url: "/shuoshuo/",
+		},
 		// {
 		// 	name: "GitHub",
 		// 	url: "https://github.com/histcat", // Internal links should not include the base path, as it is automatically added
