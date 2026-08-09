@@ -36,7 +36,6 @@ const { Content } = friendsPost ? await render(friendsPost) : { Content: null };
             {friends.map((friend) => <FriendsCard friend={friend} />)}
           </div>
         ) : (
-          <!-- Empty state -->
           <div class="flex flex-col items-center justify-center py-16 text-50">
             <Icon
               name="material-symbols:people-outline-rounded"
