@@ -56,20 +56,60 @@ const DARK_STYLES = `
   html.dark .tk-comment {
     border-bottom-color: #374151 !important;
   }
+  /* OwO emoji picker full dark mode */
+  html.dark .OwO .OwO-body {
+    background-color: #1f2937 !important;
+    border-color: #4b5563 !important;
+  }
+  html.dark .OwO .OwO-bar {
+    background-color: #111827 !important;
+    border-bottom-color: #374151 !important;
+    color: #d1d5db !important;
+  }
+  html.dark .OwO .OwO-bar .OwO-item {
+    color: #9ca3af !important;
+  }
+  html.dark .OwO .OwO-items {
+    background-color: #1f2937 !important;
+  }
+  html.dark .OwO .OwO-items .OwO-item,
+  html.dark .OwO .OwO-items li {
+    background-color: #1f2937 !important;
+    border-color: #374151 !important;
+    color: #d1d5db !important;
+  }
 `
 
-let styleEl = null
+const OWO_FIX_STYLES = `
+  /* Prevent OwO emoji picker from being clipped */
+  .OwO .OwO-body {
+    max-height: min(320px, 60vh) !important;
+    overflow-y: auto !important;
+  }
+  /* Override overflow:hidden on card-base wrappers that clip the OwO popup */
+  #post-container,
+  #friends-container {
+    overflow: visible !important;
+  }
+  div:has(> #post-container),
+  div:has(> #friends-container) {
+    overflow: visible !important;
+  }
+`
+
+let darkStyleEl = null
+let owoFixEl = null
 
 function updateDarkStyles() {
   const isDark = document.documentElement.classList.contains('dark')
-  if (isDark && !styleEl) {
-    styleEl = document.createElement('style')
-    styleEl.id = 'twikoo-dark-styles'
-    styleEl.textContent = DARK_STYLES
-    document.head.appendChild(styleEl)
-  } else if (!isDark && styleEl) {
-    styleEl.remove()
-    styleEl = null
+  if (isDark && !darkStyleEl) {
+    darkStyleEl = document.createElement('style')
+    darkStyleEl.id = 'twikoo-dark-styles'
+    darkStyleEl.textContent = DARK_STYLES
+    document.head.appendChild(darkStyleEl)
+  } else if (!isDark && darkStyleEl) {
+    darkStyleEl.remove()
+    darkStyleEl = null
   }
 }
 
@@ -81,6 +121,13 @@ onMount(() => {
       envId: TWIKOO_ENV_ID,
       el: '#tcomment',
     })
+    // Inject OwO overflow fix after Twikoo initializes (OwO DOM may be created lazily)
+    if (!owoFixEl) {
+      owoFixEl = document.createElement('style')
+      owoFixEl.id = 'twikoo-owo-fix'
+      owoFixEl.textContent = OWO_FIX_STYLES
+      document.head.appendChild(owoFixEl)
+    }
   }
   document.body.appendChild(script)
 
