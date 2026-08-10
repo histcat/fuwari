@@ -25,4 +25,10 @@ export const friends: Friend[] = [
 		avatar: "https://www.guirlan.de/favicon.ico",
 		description: "这里储存着各种稀奇古怪事物~",
 	},
+	{
+		name: "Davidの3号基地",
+		url: "https://www.david03.top",
+		avatar: "https://www.david03.top/favicon.ico",
+		description: "一入医门深似海，从此笃行无归途",
+	},
 ];
