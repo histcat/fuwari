@@ -11,3 +11,12 @@ draft: false
 
 评分是grandscope平台，在csdiy上可以找到邀请码
 
+# 2. Defining and Using Classes
+## Static vs Non-static(a.k.a Instance)
+Static methods are invoked using the class name
+
+Instance methods are invoked using an instance name
+
+
+Let's cover one important idea that you'll want to be using all throughout the course: whelper methods.
+
