@@ -43,6 +43,8 @@ eg. lean
 寄存器 -> 缓存 Cache（介于之间 eg. L1, L2, L3） -> 主内存 RAM -> 固态硬盘
 慢 便宜
 
+DRAM SRAM
+
 5级流水cpu
  IF instruction fetch
  ID instruction decode
@@ -194,4 +196,42 @@ chmod +x xxx.sh
 
 ## git
 
-## cmake
+工作区 现在的内容
+暂存区 
+本地仓库 新增一个检查点
+
+git add .
+git commit -m "提交信息"
+
+提交信息的格式：
+fix: bugs in xxx
+feat: 新增feature
+docs: 新增文档
+
+
+git reset -soft/hard 
+
+## cmake & make
+makefile 一个菜谱
+
+输入 
+```makefile
+产物：依赖项
+
+变量定义
+CXX := g++
+CPPFLAGS := -Iinclude
+
+$(CXX) $(CPPFLAGS)
+```
+
+```cmake
+
+
+```
+
+```shell
+make -jxx xx核上并行编译
+```
+
+make可以增量构建 
