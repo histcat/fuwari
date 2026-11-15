@@ -238,4 +238,64 @@ make可以增量构建
 
 c没有包管理器
 
-# 
+# C++ 语法
+
+C++ Primer 
+C++ Primer Plus
+
+多写一些项目
+
+## 程序的行为
+Well-Defined
+Ill-Defined
+Implementation-Defined Behavior 不同的编译器的行为不同 eg. int的长度
+Unspecified Behavior 未指定行为 文档没写
+UB Undefined Behavior 没被明确定义 结果无法确定
+
+间接修改const变量
+```
+const int a = 10;
+int *p = const_cast<int *>(&a);
+*p = 20;
+```
+
+非法解引用
+```cpp
+int *p = nullptr;
+*p = 10;
+```
+
+## 程序编译流程
+preparation后的源文件 叫做 翻译单元 Translation Unit
+
+## 预处理指令
+\# ifndef MACRO
+\#  define MACRO
+\# endif
+
+宏函数 最外面一定加上括号
+
+```cpp
+#define SQUARE(x) x * x
+
+SQUARE(2 + 3) 与预期不一样
+```
+
+不建议写宏函数
+
+## Once Definition Rule
+TODO:
+inline
+extern
+static
+是啥
+
+## 声明和初始化
+声明
+定义
+定义的时候可以Initialization
+初始化不是赋值
+
+## 基础类型
+void *
+
