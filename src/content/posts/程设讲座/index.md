@@ -298,4 +298,98 @@ static
 
 ## 基础类型
 void *
+### 浮点类型
 
+## 常量和变量
+包括 Literal Enumerator constexpr 编译时可以确定的const变量 常量表达式 eg. const int K = N * M + 1 (如果n，m是确定的)
+
+变量： eg `int a = 2; const int d = a; int m[d]`; 报错！
+
+## 表达式和语句
+形式文法与产生柿
+Formal Grammer 和 Production Rule
+语句中不可分割的符号成为 终结符 Terminal Symbol
+
+## 表达式
+Expression 由 Operator运算符 和 Operand 操作数 组成
+
+## 求值顺序
+操作式 求值分为两部分：Value Computation 和 Side Effect
+
+取余满足 (a / b) * b + (a % b) == a
+
+## 位运算
+
+a ^= b ^= a ^= b
+
+## 逻辑表达式
+短路求值
+
+## 类型转换
+c风格转换 (double)10
+函数风格 double(10)
+
+具名类型转换
+static_cast 静态类型转换
+const_cast 强行去掉const限定
+dynamic_cast
+reinterpret_cast重解释转换
+
+## 优先级
+只告诉如何添加括号
+## 值类别
+左值 右值
+左值：能取地址的
+右值：不能取地址的
+
+右值包括 
+盲值xva
+lue 苟活一会 类型与右值引用的值 
+和 
+纯右值prvalue 临时对象
+
+## 语句
+switch定义变量建议一定要有作用域`{}`
+
+do while()**;**
+
+
+for的小括号的定义的语句也在同一个作用域里
+
+## 基于范围的循环
+
+:
+
+## 数组
+数组类型是完整类型 
+
+数组本身也是一个类型
+
+sizeof(T[N]) == sizeof(T) * sizeof (N)
+
+数组在进行计算和传参的时候会发生退化，转换到指向首元素的指针
+
+多维数组是 元素类型为数组的数组
+
+## 指针
+用于保存另一个变量的地址，从而实现间接访问
+NULL 或者 nullptr 表示空指针
+指针类型的长度为实现定义，与指向的类型无关，通常为32位/64位
+取地址和解引用
+const的引用
+指针数组和数组指针
+
+### 指针算数
+#### 合法的指针
+指向一个对象或者数组 或者 最后一个元素 或者空指针
+
+p 指向 a[i], q 指向 a[j]
+
+p + k 指向 i + k
+
+p - q 表示 i - j 的值，如果没有指向
+
+
+T t[N][M] 访问 t[0][M] == t[1][0]
+
+## 引用
