@@ -164,6 +164,28 @@ cp 复制 cp A B 从A 复制到 B
 mv 剪切
 rm / rmdir
 rm -r 递归地删除
+
+输入输出重定向
+./code > aa.txt
+./code < in.txt
+./code 2> err.txt 
+./code 2> /dev/null 丢弃
+
+管道运算符 |
+
+把前一个输出送到输入
+
+eg.
+
+cat xxx.txt | grep PRINT -c (count)
+
+// stdin stdout 标准输入输出
+// stderr 走 cerr 没有缓冲区 
+
+
+linux的权限
+
+chmod +x xxx.sh
 ```
 
 环境变量：打印没有前缀的命令会去$PATH下找
@@ -171,3 +193,5 @@ rm -r 递归地删除
 ./ 从当前路径开始
 
 ## git
+
+## cmake
