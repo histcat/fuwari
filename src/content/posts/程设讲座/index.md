@@ -1,7 +1,7 @@
 ---
 title: 程设讲座
 category: ''
-published: '2026-11-15T05:58:45.631Z'
+published: 2026-11-15
 tags: []
 draft: false
 ---
